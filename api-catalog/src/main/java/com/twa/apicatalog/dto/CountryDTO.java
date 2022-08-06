@@ -1,9 +1,14 @@
 package com.twa.apicatalog.dto;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class CountryDTO {
 
     private long id;
+    @Size(min = 2, max = 3)
     private String code;
+    @NotEmpty(message = "this attribute is mandatory")
     private String description;
 
     public long getId() {
